@@ -6,7 +6,7 @@ export const Dashboard = () => {
   return (
     <MainLayout>
       <div className="container-fluid vh-100 d-flex flex-column justify-content-center align-items-start">
-        <h1 className='title'>Bienvenido a Dashboard</h1>
+        <h1 className='title'>Dashboard</h1>
       
         <div className="row w-100">
           <div className="col-12 mb-4">
