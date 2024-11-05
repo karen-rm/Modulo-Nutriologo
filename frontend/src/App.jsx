@@ -1,6 +1,6 @@
-import { Login, Home, Dashboard, Register, RegimenesPanel } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
+import { Dashboard, Home, Login, PacientesPanel, RegimenesPanel, Register } from "./pages/";
 
 
 const router = createBrowserRouter([
@@ -33,6 +33,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <RegimenesPanel/>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/pacientes",
+    element: (
+      <ProtectedRoute>
+        <PacientesPanel/>
       </ProtectedRoute>
     ),
   },

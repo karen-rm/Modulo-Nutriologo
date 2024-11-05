@@ -5,4 +5,5 @@ export { Home } from "./Home";
 export { Dashboard } from "./Dashboard";
 export { Register } from "./Register";
 export { RegimenesPanel } from "./RegimenesPanel"
+export { PacientesPanel } from "./PacientesPanel";
 // Añade más exportaciones según las páginas que tengas en el directorio
