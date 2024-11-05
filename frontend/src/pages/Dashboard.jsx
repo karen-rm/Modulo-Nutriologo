@@ -16,7 +16,7 @@ export const Dashboard = () => {
           <div className="col-12 mb-4">
             <div className="d-grid">
 					    <button type="button" className="btn btn-primary btn-lg text-start btn-text"
-              onClick={() => navigate("/patientRegister")}>Panel Pacientes</button> 
+              onClick={() => navigate("/PatientRegister")}>Panel Pacientes</button> 
 				    </div>
           </div>
 

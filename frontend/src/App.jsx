@@ -29,9 +29,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/patientRegister",
-    element: <PatientRegister />
-      
+    path: "/PatientRegister",
+    element: (
+      <ProtectedRoute>
+        <PatientRegister />
+      </ProtectedRoute>
+    ),
   },
 ]);
 
