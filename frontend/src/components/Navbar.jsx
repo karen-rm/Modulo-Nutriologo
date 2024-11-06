@@ -1,46 +1,51 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { useAuth } from "../hooks/useAuth";
+import { useLocation } from "react-router-dom";
 
-export const Navbar = () => {
+export const NavbarComponent = () => {
   const { isAuthenticated, signout } = useAuth();
+  const location = useLocation();
+
+  // Determina si es una página de autenticación (login o register)
+  const isAuthPage = location.pathname === "/" || location.pathname === "/register";
+  const title = isAuthPage ? "Sistema de Seguimiento Alimenticio (SSA)" : "NutriApp";
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div className="container-fluid space-between">
-        <a className="navbar-brand" href="#">
-          NutriApp
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="navbar-nav mr-auto">
-            {/* Other nav items can go here */}
-          </ul>
-          <ul className="navbar-nav ml-auto">
+    <Navbar bg="primary" variant="dark" expand="md" fixed="top">
+      <Container className={`d-flex ${isAuthPage ? 'justify-content-center' : 'justify-content-between align-items-center'}`}>
+        {/* Botón de regreso (no mostrar en login/register) */}
+        {!isAuthPage && (
+          <Button variant="light">
+            <i className="bi bi-arrow-left"></i> 
+          </Button>
+        )}
+
+        {/* Título o Marca */}
+        <Navbar.Brand className={isAuthPage ? "mx-auto" : ""} href="#">
+          {title}
+        </Navbar.Brand>
+
+        {/* Íconos y botón de cerrar sesión (solo si no estamos en login/register) */}
+        {!isAuthPage && (
+          <Nav className="ml-auto d-flex align-items-center">
+            <Nav.Link className="text-white">
+              <i className="bi bi-bell"></i> 
+            </Nav.Link>
+            <Nav.Link className="text-white">
+              <i className="bi bi-envelope"></i> 
+            </Nav.Link>
             {isAuthenticated && (
-              <li className="nav-item">
-                <Link to="/">
-                  <a className="nav-link" href="#" onClick={signout}>
-                    Salir
-                  </a>
-                </Link>
-              </li>
+              <Button variant="outline-danger" onClick={signout} className="ms-2">
+                Cerrar sesión
+              </Button>
             )}
-          </ul>
-        </div>
-      </div>
-    </nav>
+          </Nav>
+        )}
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

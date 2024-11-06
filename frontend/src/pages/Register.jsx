@@ -24,7 +24,7 @@ export const Register = () => {
   return (
     <MainLayout>
       <div
-        className="d-flex justify-content-center align-items-center vh-100"
+        className="d-flex justify-content-center align-items-center min-h-screen"
         style={{ backgroundColor: "#f8f9fa" }}
       >
         <div className="card p-4" style={{ width: "400px" }}>
