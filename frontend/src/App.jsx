@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
-import { Dashboard, Home, Login, PatientRegister, Register } from "./pages/";
+import { Dashboard, Home, Login, PacientesPanel, RegimenesPanel, Register, PatientRegister } from "./pages/";
 
 
 const router = createBrowserRouter([
@@ -29,13 +29,31 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/PatientRegister",
+    path: "/regimenes",
     element: (
       <ProtectedRoute>
-        <PatientRegister />
+        <RegimenesPanel/>
       </ProtectedRoute>
     ),
   },
+  {
+    path: "/pacientes",
+    element: (
+      <ProtectedRoute>
+        <PacientesPanel/>
+      </ProtectedRoute>
+    ),
+  },
+
+  {
+    path: "/PatientRegister",
+    element: (
+      <ProtectedRoute>
+        <PatientRegister/>
+      </ProtectedRoute>
+    ),
+
+  }
 ]);
 
 
