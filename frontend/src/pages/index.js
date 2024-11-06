@@ -4,4 +4,5 @@ export { Login } from "./Login";
 export { Home } from "./Home";
 export { Dashboard } from "./Dashboard";
 export { Register } from "./Register";
+export { PatientRegister } from "./PatientRegister"
 // Añade más exportaciones según las páginas que tengas en el directorio
