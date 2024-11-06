@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 
 export const PacientesPanel = () => {
+
+  const navigate = useNavigate();
+
   // Datos de prueba
   const [patients, setPatients] = useState([
     { id: 1, name: 'Paciente 1' },
@@ -30,10 +34,10 @@ export const PacientesPanel = () => {
 
         <Row className="my-2">
           <Col>
-            <Button variant="secondary" className="me-2">
+            <Button onClick={()=>navigate('/archivadosp')} variant="secondary" className="me-2">
               Archivados
             </Button>
-            <Button variant="secondary">Añadir</Button>
+            <Button onClick={()=>navigate('/PatientRegister')} variant="secondary">Añadir</Button>
           </Col>
         </Row>
 
