@@ -1,6 +1,6 @@
-import { Login, Home, Dashboard, Register } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
+import { Dashboard, Home, Login, MessagePanel, Register } from "./pages/";
 
 
 const router = createBrowserRouter([
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
         <Dashboard />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "/message-panel",
+    element: <MessagePanel/>,
   },
 ]);
 
