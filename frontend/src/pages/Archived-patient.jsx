@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { MainLayout } from '../layouts/MainLayout';
 
-export const Archivadosp = () => {
+export const Archived_patient = () => {
   return (
     <MainLayout>
       <div className="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -46,4 +46,4 @@ export const Archivadosp = () => {
   );
 };
 
-export default Archivadosp;
+export default Archived_patient;
