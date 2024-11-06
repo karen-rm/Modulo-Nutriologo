@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { MainLayout } from '../layouts/MainLayout';
 
-export const RegimenesPanel = () => {
+export const RegimesPanel = () => {
   // Datos de prueba para los regímenes
   const regimenes = [
     { id: 1, nombre: 'Regimen 1' },
@@ -47,4 +47,4 @@ export const RegimenesPanel = () => {
   );
 };
 
-export default RegimenesPanel;
+export default RegimesPanel;

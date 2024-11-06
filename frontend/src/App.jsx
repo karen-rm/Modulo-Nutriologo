@@ -6,9 +6,9 @@ import {
   Fichamedica,
   Home,
   Login,
-  PacientesPanel,
+  PatientsPanel,
   PatientRegister,
-  RegimenesPanel,
+  RegimesPanel,
   Register,
 } from './pages/';
 
@@ -38,18 +38,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/regimenes',
+    path: '/Regimes-panel',
     element: (
       <ProtectedRoute>
-        <RegimenesPanel />
+        <RegimesPanel />
       </ProtectedRoute>
     ),
   },
   {
-    path: '/pacientes',
+    path: '/Patients-panel',
     element: (
       <ProtectedRoute>
-        <PacientesPanel />
+        <PatientsPanel />
       </ProtectedRoute>
     ),
   },

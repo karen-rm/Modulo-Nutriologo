@@ -15,13 +15,13 @@ export const Dashboard = () => {
         <div className="row w-100">
           <div className="col-12 mb-4">
             <div className="d-grid">
-					    <button onClick={()=>navigate('/pacientes')} type="button" className="btn btn-primary btn-lg text-start btn-text">Panel Pacientes</button> 
+					    <button onClick={()=>navigate('/Patients-panel')} type="button" className="btn btn-primary btn-lg text-start btn-text">Panel Pacientes</button> 
 				    </div>
           </div>
 
           <div className="col-12 mb-4">
             <div className="d-grid">
-					    <button onClick={()=>navigate('/regimenes')} type="button" className="btn btn-primary btn-lg text-start btn-text">Panel Régimenes</button> 
+					    <button onClick={()=>navigate('/Regimes-panel')} type="button" className="btn btn-primary btn-lg text-start btn-text">Panel Régimenes</button> 
 				    </div>
           </div>
 

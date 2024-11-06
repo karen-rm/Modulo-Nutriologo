@@ -3,7 +3,7 @@ export { Dashboard } from './Dashboard';
 export { Fichamedica } from './Fichamedica';
 export { Home } from './Home';
 export { Login } from './Login';
-export { PacientesPanel } from './PacientesPanel'; // Añadido
+export { PatientsPanel } from './Patients-panel'; // Añadido
 export { PatientRegister } from './PatientRegister';
-export { RegimenesPanel } from './RegimenesPanel'; // Añadido
+export { RegimesPanel } from './Regimes-panel'; // Añadido
 export { Register } from './Register';
