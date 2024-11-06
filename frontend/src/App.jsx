@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './helpers/ProtectedRoute';
 import {
-  Archivadosp,
+  Archived_patient,
   Dashboard,
-  Fichamedica,
   Home,
   Login,
   PatientsPanel,
+  Patient_details,
   PatientRegister,
   RegimesPanel,
   Register,
@@ -62,18 +62,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/archivadosp',
+    path: '/archived_patient',
     element: (
       <ProtectedRoute>
-        <Archivadosp />
+        <Archived_patient />
       </ProtectedRoute>
     ),
   },
   {
-    path: '/fichamedica',
+    path: '/patient_details',
     element: (
       <ProtectedRoute>
-        <Fichamedica />
+        <Patient_details />
       </ProtectedRoute>
     ),
   },

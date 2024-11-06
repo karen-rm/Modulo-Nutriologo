@@ -31,7 +31,7 @@ export const PatientsPanel = () => {
 
         <Row className="my-2">
           <Col>
-            <Button onClick={()=>navigate('/archivadosp')} variant="secondary" className="me-2">
+            <Button onClick={()=>navigate('/archived_patient')} variant="secondary" className="me-2">
               Archivados
             </Button>
             <Button onClick={()=>navigate('/PatientRegister')} variant="secondary">Añadir</Button>
@@ -56,7 +56,7 @@ export const PatientsPanel = () => {
                     </Button>
                     <Button
                       variant="success"
-                      onClick={() => navigate('/fichamedica')}
+                      onClick={() => navigate('/patient_details')}
                     >
                       Ver detalles
                     </Button>
