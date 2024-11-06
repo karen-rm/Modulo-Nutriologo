@@ -1,19 +1,20 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProtectedRoute from "./helpers/ProtectedRoute";
-import { Dashboard, Home, Login, PatientRegister, Register } from "./pages/";
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ProtectedRoute from './helpers/ProtectedRoute';
+import { Dashboard, Home, Login, Register } from './pages/';
+import Archivadosp from './pages/Archivadosp';
+import Fichamedica from './pages/Fichamedica';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Login />,
   },
   {
-    path: "register",
+    path: 'register',
     element: <Register />,
   },
   {
-    path: "/home",
+    path: '/home',
     element: (
       <ProtectedRoute>
         <Home />
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <ProtectedRoute>
         <Dashboard />
@@ -29,16 +30,22 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/PatientRegister",
+    path: '/archivadosp',
     element: (
       <ProtectedRoute>
-        <PatientRegister />
+        <Archivadosp />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/fichamedica',
+    element: (
+      <ProtectedRoute>
+        <Fichamedica />
       </ProtectedRoute>
     ),
   },
 ]);
-
-
 
 const App = () => {
   return <RouterProvider router={router} />;
