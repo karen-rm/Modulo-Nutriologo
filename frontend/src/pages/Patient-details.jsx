@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { MainLayout } from '../layouts/MainLayout';
 
-export const Fichamedica = () => {
+export const Patient_details = () => {
   const [patientData, setPatientData] = useState({
     name: 'Juan',
     lastName: 'Pérez',
@@ -163,4 +163,4 @@ export const Fichamedica = () => {
   );
 };
 
-export default Fichamedica;
+export default Patient_details;

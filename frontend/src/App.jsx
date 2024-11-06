@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './helpers/ProtectedRoute';
 import {
-  Archivadosp,
+  Archived_patient,
   Dashboard,
-  Fichamedica,
   Home,
   Login,
-  PacientesPanel,
+  PatientsPanel,
+  Patient_details,
   PatientRegister,
-  RegimenesPanel,
+  RegimesPanel,
   Register,
 } from './pages/';
 
@@ -38,18 +38,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/regimenes',
+    path: '/Regimes-panel',
     element: (
       <ProtectedRoute>
-        <RegimenesPanel />
+        <RegimesPanel />
       </ProtectedRoute>
     ),
   },
   {
-    path: '/pacientes',
+    path: '/Patients-panel',
     element: (
       <ProtectedRoute>
-        <PacientesPanel />
+        <PatientsPanel />
       </ProtectedRoute>
     ),
   },
@@ -62,18 +62,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/archivadosp',
+    path: '/archived_patient',
     element: (
       <ProtectedRoute>
-        <Archivadosp />
+        <Archived_patient />
       </ProtectedRoute>
     ),
   },
   {
-    path: '/fichamedica',
+    path: '/patient_details',
     element: (
       <ProtectedRoute>
-        <Fichamedica />
+        <Patient_details />
       </ProtectedRoute>
     ),
   },

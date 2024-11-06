@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 
-export const PacientesPanel = () => {
+export const PatientsPanel = () => {
 
   const navigate = useNavigate();
 
@@ -20,10 +20,7 @@ export const PacientesPanel = () => {
     // Aquí puedes implementar la lógica para archivar
   };
 
-  const handleDetails = (id) => {
-    alert(`Mostrando detalles para el paciente con ID ${id}`);
-    // Aquí puedes implementar la lógica para ver detalles
-  };
+
 
   return (
     <MainLayout>
@@ -34,7 +31,7 @@ export const PacientesPanel = () => {
 
         <Row className="my-2">
           <Col>
-            <Button onClick={()=>navigate('/archivadosp')} variant="secondary" className="me-2">
+            <Button onClick={()=>navigate('/archived_patient')} variant="secondary" className="me-2">
               Archivados
             </Button>
             <Button onClick={()=>navigate('/PatientRegister')} variant="secondary">Añadir</Button>
@@ -59,7 +56,7 @@ export const PacientesPanel = () => {
                     </Button>
                     <Button
                       variant="success"
-                      onClick={() => handleDetails(patient.id)}
+                      onClick={() => navigate('/patient_details')}
                     >
                       Ver detalles
                     </Button>
@@ -74,4 +71,4 @@ export const PacientesPanel = () => {
   );
 };
 
-export default PacientesPanel;
+export default PatientsPanel;
