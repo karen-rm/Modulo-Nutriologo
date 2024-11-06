@@ -4,6 +4,6 @@ export { Fichamedica } from './Fichamedica';
 export { Home } from './Home';
 export { Login } from './Login';
 export { PacientesPanel } from './PacientesPanel'; // Añadido
-export { PatientRegister } from './PatientRegister';
+export { Registerpatient } from './Register-patient';
 export { RegimenesPanel } from './RegimenesPanel'; // Añadido
 export { Register } from './Register';

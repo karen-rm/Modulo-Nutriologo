@@ -7,7 +7,7 @@ import {
   Home,
   Login,
   PacientesPanel,
-  PatientRegister,
+  Registerpatient,
   RegimenesPanel,
   Register,
 } from './pages/';
@@ -54,10 +54,10 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/PatientRegister',
+    path: '/Register-patient',
     element: (
       <ProtectedRoute>
-        <PatientRegister />
+        <Registerpatient />
       </ProtectedRoute>
     ),
   },
