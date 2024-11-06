@@ -4,6 +4,6 @@ export { Home } from './Home';
 export { Login } from './Login';
 export { PatientsPanel } from './Patients-panel'; // Añadido
 export { Patient_details } from './Patient-details';
-export { PatientRegister } from './PatientRegister';
+export { Registerpatient } from './Register-patient';
 export { RegimesPanel } from './Regimes-panel'; // Añadido
 export { Register } from './Register';

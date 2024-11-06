@@ -4,7 +4,7 @@ import { MainLayout } from "../layouts/MainLayout";
 import './css/style_PatientRegister.css';
 
 
-export const PatientRegister = () => {
+export const Registerpatient = () => {
 
   const [formData, setFormData] = useState({
     nombre: "",
@@ -217,4 +217,4 @@ export const PatientRegister = () => {
   ); 
 }
 
-export default PatientRegister;
+export default Registerpatient;

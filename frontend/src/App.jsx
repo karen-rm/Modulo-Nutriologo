@@ -5,11 +5,11 @@ import {
   Dashboard,
   Home,
   Login,
-  PatientsPanel,
   Patient_details,
-  PatientRegister,
+  PatientsPanel,
   RegimesPanel,
   Register,
+  Registerpatient,
 } from './pages/';
 
 const router = createBrowserRouter([
@@ -54,10 +54,10 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/PatientRegister',
+    path: '/Register-patient',
     element: (
       <ProtectedRoute>
-        <PatientRegister />
+        <Registerpatient />
       </ProtectedRoute>
     ),
   },
