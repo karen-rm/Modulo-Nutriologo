@@ -1,19 +1,28 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProtectedRoute from "./helpers/ProtectedRoute";
-import { Dashboard, Home, Login, PacientesPanel, RegimenesPanel, Register, PatientRegister } from "./pages/";
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ProtectedRoute from './helpers/ProtectedRoute';
+import {
+  Archivadosp,
+  Dashboard,
+  Fichamedica,
+  Home,
+  Login,
+  PacientesPanel,
+  PatientRegister,
+  RegimenesPanel,
+  Register,
+} from './pages/';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Login />,
   },
   {
-    path: "register",
+    path: 'register',
     element: <Register />,
   },
   {
-    path: "/home",
+    path: '/home',
     element: (
       <ProtectedRoute>
         <Home />
@@ -21,7 +30,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <ProtectedRoute>
         <Dashboard />
@@ -29,34 +38,46 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/regimenes",
+    path: '/regimenes',
     element: (
       <ProtectedRoute>
-        <RegimenesPanel/>
+        <RegimenesPanel />
       </ProtectedRoute>
     ),
   },
   {
-    path: "/pacientes",
+    path: '/pacientes',
     element: (
       <ProtectedRoute>
-        <PacientesPanel/>
+        <PacientesPanel />
       </ProtectedRoute>
     ),
   },
-
   {
-    path: "/PatientRegister",
+    path: '/PatientRegister',
     element: (
       <ProtectedRoute>
-        <PatientRegister/>
+        <PatientRegister />
       </ProtectedRoute>
     ),
-
-  }
+  },
+  {
+    path: '/archivadosp',
+    element: (
+      <ProtectedRoute>
+        <Archivadosp />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/fichamedica',
+    element: (
+      <ProtectedRoute>
+        <Fichamedica />
+      </ProtectedRoute>
+    ),
+  },
 ]);
-
-
 
 const App = () => {
   return <RouterProvider router={router} />;
