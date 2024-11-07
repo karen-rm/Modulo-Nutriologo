@@ -13,14 +13,8 @@ export const NavbarComponent = () => {
   const title = isAuthPage ? "Sistema de Seguimiento Alimenticio (SSA)" : "NutriApp";
 
   return (
-    <Navbar bg="primary" variant="dark" expand="md" fixed="top">
+    <Navbar style={{ backgroundColor: '#1abc9c'}} variant="dark" expand="md" fixed="top">
       <Container className={`d-flex ${isAuthPage ? 'justify-content-center' : 'justify-content-between align-items-center'}`}>
-        {/* Botón de regreso (no mostrar en login/register) */}
-        {!isAuthPage && (
-          <Button variant="light">
-            <i className="bi bi-arrow-left"></i> 
-          </Button>
-        )}
 
         {/* Título o Marca */}
         <Navbar.Brand className={isAuthPage ? "mx-auto" : ""} href="#">
