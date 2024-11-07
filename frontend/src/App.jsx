@@ -10,6 +10,7 @@ import {
   RegimesPanel,
   Register,
   Registerpatient,
+  MessagePanel
 } from './pages/';
 
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
         <Patient_details />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "/message-panel",
+    element: <MessagePanel/>,
   },
 ]);
 
