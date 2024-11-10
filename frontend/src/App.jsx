@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ProtectedRoute from './helpers/ProtectedRoute';
+import ProtectedRoute from './helpers/ProtectedRoute'; //EC6 import
+
 import {
   Archived_patient,
   Dashboard,
