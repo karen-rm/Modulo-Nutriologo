@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import mysql from "mysql2/promise";
+import User from "../models/User";
 
 // TODO:
 const dbConfig = {
@@ -9,37 +10,46 @@ const dbConfig = {
   database: "nombre_de_tu_base_de_datos",
 };
 
-export const registerUser = async (req, res) => {
-  const { nombre, apellidos, correo, contrasena, telefono } = req.body;
+export const Login = async (req, res) => {
+  const { correo, contrasena } = req.body;
 
-  if (!nombre || !apellidos || !correo || !contrasena || !telefono) {
-    return res
-      .status(400)
-      .json({ message: "Todos los campos son obligatorios" });
-  }
+  User.findOne({ where: { Correo: correo } })
+    .then((user) => {
+      if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
 
-  try {
-    const connection = await mysql.createConnection(dbConfig);
+      bcrypt.compare(contrasena, user.Contrasena, (err, result) => {
+        if (err) {
+          return res.status(401).json({ message: "Error al autenticar" });
+        }
 
-    const [rows] = await connection.execute(
-      "SELECT * FROM usuarios WHERE correo = ?",
-      [correo]
-    );
-    if (rows.length > 0) {
-      return res.status(400).json({ message: "El correo ya está registrado" });
-    }
+        if (result) {
+          return res.status(200).json({ message: "Usuario autenticado" });
+        }
 
-    const hashedPassword = await bcrypt.hash(contrasena, 10);
+        return res.status(401).json({ message: "Contraseña incorrecta" });
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ message: "Error al autenticar" });
+    });
+};
 
-    await connection.execute(
-      "INSERT INTO usuarios (nombre, apellidos, correo, contrasena, telefono) VALUES (?, ?, ?, ?, ?)",
-      [nombre, apellidos, correo, hashedPassword, telefono]
-    );
-
+const registerUser = async (req, res) => {
+  User.create ({
+    Nombre: req.body.nombre,
+    Apellidos: req.body.apellidos,
+    Correo: req.body.correo,
+    Contrasena: req.body.contrasena,
+    Telefono: req.body.telefono
+  })
+  .then(() => {
     res.status(201).json({ message: "Usuario registrado exitosamente" });
-    await connection.end();
-  } catch (error) {
+  }
+  .catch((error) => {
     console.error(error);
     res.status(500).json({ message: "Error al registrar el usuario" });
-  }
+  });
 };
