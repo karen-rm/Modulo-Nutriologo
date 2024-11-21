@@ -1,6 +1,6 @@
 import express from "express";
 import { router } from "./routes/routes.js"; // Ensure the correct path
-import { sequelize } from "./config/database.js"; // Ensure the correct path
+
 
 const app = express();
 

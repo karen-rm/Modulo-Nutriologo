@@ -2,28 +2,39 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "../layouts/MainLayout";
+import { useState } from "react";
 
 export const Register = () => {
   const navigate = useNavigate();
+  const [errors, setErrors] = useState("");
 
   // TODO:  Implementar validación de contraseña
-  const validatePassword = (password) => {};
+  const validatePassword = (password) => {
+    
+  };
 
   // TODO: Implementar validación de campos
-  const validateFields = () => {};
+  const validateFields = () => {
+    setErrors("Error en los campos");
+    return false;
+  };
 
-  const handleSubmit = async (e) => { 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const credentials = {
-      firstName: e.target.inputFirstName.value,
-      lastName: e.target.inputLastName.value,
-      middleName: e.target.inputMiddleName.value,
-      email: e.target.inputEmail.value,
-      password: e.target.inputPassword.value,
-      confirmPassword: e.target.inputConfirmPassword.value,
-      phoneNumber: e.target.inputPhoneNumber.value,
+    const formData = {
+      name: document.getElementById("name").value,
+      lastname1: document.getElementById("lastname1").value,
+      lastname2: document.getElementById("lastname2").value,
+      phoneNumber: document.getElementById("phoneNumber").value,
+      state: document.getElementById("inputState").value,
+      city: document.getElementById("city").value,
+      license: document.getElementById("license").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      confirmPassword: document.getElementById("confirmPassword").value,
     };
-    console.log(JSON.stringify(credentials));
+
+    console.log(formData);
     navigate("/");
   };
 
@@ -52,7 +63,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              id="inputFirstName"
+              id="name"
               className="form-control mb-3"
               required=""
               autoFocus=""
@@ -63,7 +74,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              id="inputLastName"
+              id="lastname1"
               className="form-control mb-3"
               required=""
             />
@@ -73,7 +84,7 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              id="inputMiddleName"
+              id="lastname2"
               className="form-control mb-3"
               required=""
             />
@@ -83,7 +94,7 @@ export const Register = () => {
             </label>
             <input
               type="number"
-              id="inputPhoneNumber"
+              id="phoneNumber"
               className="form-control mb-3"
               required=""
             />
@@ -131,7 +142,7 @@ export const Register = () => {
             </label>
             <input
               type="number"
-              id="inputMiddleName"
+              id="city"
               className="form-control mb-3"
               required=""
             />
@@ -141,7 +152,7 @@ export const Register = () => {
             </label>
             <input
               type="number"
-              id="inputMiddleName"
+              id="license"
               className="form-control mb-3"
               required=""
             />
@@ -151,7 +162,7 @@ export const Register = () => {
             </label>
             <input
               type="email"
-              id="inputEmail"
+              id="email"
               className="form-control mb-3"
               required="true"
             />
@@ -161,7 +172,7 @@ export const Register = () => {
             </label>
             <input
               type="password"
-              id="inputPassword"
+              id="password"
               className="form-control mb-3"
               required=""
             />
@@ -174,12 +185,13 @@ export const Register = () => {
             </label>
             <input
               type="password"
-              id="inputConfirmPassword"
+              id="confirmPassword"
               className="form-control mb-3"
               required=""
             />
 
             <div className="d-flex flex-column align-items-center">
+              <p className="text-danger">{errors}</p>
               <button className="btn btn-lg btn-primary mb-2" type="submit">
                 Registrarse
               </button>
