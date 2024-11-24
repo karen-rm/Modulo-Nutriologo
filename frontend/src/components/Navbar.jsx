@@ -1,10 +1,9 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
+import "../components/css/styles.css";
 import { useAuth } from "../hooks/useAuth";
-import { Link } from "react-router-dom";
 
 export const NavbarComponent = () => {
   const { isAuthenticated, signout } = useAuth();
@@ -14,12 +13,13 @@ export const NavbarComponent = () => {
   const title = isAuthPage ? "Sistema de Seguimiento Alimenticio (SSA)" : "NutriApp";
   const navigate = useNavigate();
 
+
   const goToMessages = () => {
     navigate("/message-panel"); // Cambia "/message-panel" a la ruta correcta de tu página de mensajes
   };
 
   return (
-    <Navbar bg="primary" variant="dark" expand="md" fixed="top">
+    <Navbar className="custom-navbar" bg="primary" variant="dark" expand="md" fixed="top">
       <Container className={`d-flex ${isAuthPage ? 'justify-content-center' : 'justify-content-between align-items-center'}`}>
         {/* Botón de regreso (no mostrar en login/register) */}
         {!isAuthPage && (
