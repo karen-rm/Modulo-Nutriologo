@@ -1,0 +1,37 @@
+/* src/styles/navbar.css */
+
+.custom-navbar.navbar {
+  background: linear-gradient(135deg, #134467, #1e598f) !important;
+  color: #ffffff !important;
+}
+
+.custom-navbar .navbar-nav a {
+  color: #ffffff !important;
+}
+
+.custom-navbar .bi {
+  color: #ffffff; /* Color de los íconos */
+}
+
+/* src/styles/styles.css */
+
+/* Estilos para el footer */
+.custom-footer {
+  background: linear-gradient(135deg, #134467, #1e598f) !important; /* Fondo oscuro */
+  color: #fff !important; /* Texto blanco */
+  padding: 16px 0 !important; /* Espaciado arriba y abajo */
+  text-align: center !important; /* Centrado del texto */
+  
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+.custom-footer a {
+  color: #fff !important; /* Asegúrate de que los enlaces sean blancos */
+  text-decoration: none !important; /* Sin subrayado */
+  padding: 0 10px !important;
+}
+
+.custom-footer a:hover {
+  text-decoration: underline !important; /* Subraya los enlaces al pasar el ratón */
+}
