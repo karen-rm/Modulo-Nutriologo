@@ -6,12 +6,13 @@ import {
   Dashboard,
   Home,
   Login,
+  MessagePanel,
   Patient_details,
   PatientsPanel,
+  RegimenTiempos,
   RegimesPanel,
   Register,
   Registerpatient,
-  MessagePanel
 } from './pages/';
 
 const router = createBrowserRouter([
@@ -78,6 +79,15 @@ const router = createBrowserRouter([
         <Patient_details />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: '/Regimen-por-tiempos',
+    element: (
+      <ProtectedRoute>
+        <RegimenTiempos />
+      </ProtectedRoute>
+    ),
+    errorElement: <h1>Error: No se puede cargar la página</h1>,
   },
   {
     path: "/message-panel",
