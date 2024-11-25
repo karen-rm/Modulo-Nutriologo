@@ -90,6 +90,14 @@ const router = createBrowserRouter([
     errorElement: <h1>Error: No se puede cargar la página</h1>,
   },
   {
+    path: '/register_regimenCD',
+    element: (
+      <ProtectedRoute>
+        <Register_regimenesCD />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "/message-panel",
     element: <MessagePanel/>,
   },

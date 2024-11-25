@@ -1,0 +1,22 @@
+/* Ajustar el espaciado general */
+.container-fluid {
+  padding-top: 50px; /* Bajar el contenido */
+  padding-bottom: 20px;
+  background-color: #f8f9fa; /* Fondo suave */
+}
+
+/* Estilos del título */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #343a40; /* Gris oscuro */
+}
+
+/* Tabla */
+.table {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Cortar contenido que sobresale */
+}
