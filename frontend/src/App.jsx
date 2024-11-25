@@ -80,6 +80,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: '/register_regimenCD',
+    element: (
+      <ProtectedRoute>
+        <Register_regimenesCD />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "/message-panel",
     element: <MessagePanel/>,
   },
